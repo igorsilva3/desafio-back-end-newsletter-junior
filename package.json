@@ -1,0 +1,29 @@
+{
+  "name": "desafio-back-end-newsletter-junior",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Igor Silva <igorbr2018@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^4.11.0",
+    "cors": "^2.8.5",
+    "dotenv-cli": "^7.1.0",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "prisma": "^4.11.0",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^5.0.2"
+  },
+  "scripts": {
+    "prestart": "dotenv -e ./.env prisma migrate deploy",
+    "start": "dotenv -e ./.env -- tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/index.ts",
+    "predev": "dotenv -e ./.env.development  prisma migrate deploy",
+    "dev": "dotenv -e ./.env.development -- tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/index.ts"
+  }
+}
