@@ -33,7 +33,7 @@ export class FormAnswerController {
     } catch (error: any) {
       if (error.message.includes('Unique constraint failed')) {
         res.status(400).json({
-          message: 'Email, CPF or Phone number already exists'
+          message: 'Email already exists'
         })
       }
       res.status(400).json(error.errors)
