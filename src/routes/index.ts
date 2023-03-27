@@ -1,13 +1,9 @@
 import { Router, Response } from 'express'
 
+import { formAnswerRoutes } from '@routes/formAnswerRoutes'
+
 const routes = Router()
 
-routes.use('/', (req, res: Response) => {
-  return res.status(200).json({
-    message: "Hello World"
-  })
-})
+routes.use('/answers', formAnswerRoutes)
 
-export {
-  routes
-}
+export { routes }
