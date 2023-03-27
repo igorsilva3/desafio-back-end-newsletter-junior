@@ -21,7 +21,7 @@ export class GetFormAnswerService implements  IGetFormAnswerService{
           where: {
             createdAt: {
               gte: select.filters.startDate,
-              lt: select.filters.endDate,
+              lte: select.filters.endDate,
             },
           },
           take: select.count || 10
