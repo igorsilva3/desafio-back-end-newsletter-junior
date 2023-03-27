@@ -7,34 +7,31 @@
     "moduleResolution": "node",
     "paths": {
       "@app": [
-        "app"
+        "./app"
       ],
       "@env": [
-        "env"
+        "./env"
       ],
       "@server": [
-        "server"
+        "./server"
       ],
       "@routes": [
-        "routes"
-      ],
-      "@views/*": [
-        "views/*"
+        "./routes"
       ],
       "@services/*": [
-        "services/*"
+        "./services/*"
       ],
       "@routes/*": [
-        "routes/*"
+        "./routes/*"
       ],
       "@controllers/*": [
-        "controllers/*"
-      ],
-      "@middlewares/*": [
-        "middlewares/*"
+        "./controllers/*"
       ],
       "@docs": [
-        "docs"
+        "./docs"
+      ],
+      "@prisma": [
+        "../prisma"
       ]
     },
     "resolveJsonModule": true,
