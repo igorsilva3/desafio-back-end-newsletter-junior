@@ -29,7 +29,7 @@ These programs installed on your machine:
   
 #### Environments file configuration
 
-Create the environment files for production, development and test
+Create the environment files for production and development
 
 ```bash
 touch .env .env.development
