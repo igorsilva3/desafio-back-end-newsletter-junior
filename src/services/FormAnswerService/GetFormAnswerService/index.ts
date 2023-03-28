@@ -24,7 +24,7 @@ export class GetFormAnswerService implements  IGetFormAnswerService{
               lte: select.filters.endDate,
             },
           },
-          take: select.count || 10
+          take: select.count
         })
 
         return formsAnswers
