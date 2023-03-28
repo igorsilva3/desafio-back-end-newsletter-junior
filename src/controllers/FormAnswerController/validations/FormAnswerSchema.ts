@@ -15,4 +15,5 @@ export const formAnswerSchema = z.object({
     .min(10, 'Phone number must have at least 10 digits')
     .max(11, 'Phone number must have at most 11 digits')
     .nonempty('Phone number is required'),
+  createdAt: z.date().optional()
 })

@@ -11,13 +11,14 @@ const getFormAnswerService = new GetFormAnswerService()
 export class FormAnswerController {
   async create(req: Request, res: Response) {
     try {
-      const { name, email, cpf, phone  } = req.body
+      const { name, email, cpf, phone, createdAt  } = req.body
 
       const data = {
         name,
         email,
         cpf,
-        phone
+        phone,
+        createdAt: createdAt && new Date(createdAt)
       }
 
       /* Validating the data. */
@@ -31,6 +32,7 @@ export class FormAnswerController {
         id: formAnswer.id
       })
     } catch (error: any) {
+      console.log(error);
       if (error.message.includes('Unique constraint failed')) {
         res.status(400).json({
           message: 'Email already exists'

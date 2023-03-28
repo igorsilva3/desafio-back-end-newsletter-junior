@@ -6,7 +6,8 @@ interface ICreateFormAnswerServiceDTO {
     name: string,
     email: string,
     cpf: string,
-    phone: string
+    phone: string,
+    createdAt?: string
   }
 }
 

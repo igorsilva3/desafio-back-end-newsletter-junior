@@ -48,6 +48,11 @@
                     "maxLength": 11,
                     "nullable": false,
                     "example": "11934567891"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "nullable": true,
+                    "example": "2023-03-21"
                   }
                 }
               }
