@@ -59,12 +59,18 @@ export class FormAnswerController {
           count: filters.count
         })
 
-        res.status(200).json(formsAnswers)
+        res.status(200).json({
+          answers: formsAnswers,
+          count: formsAnswers.length
+        })
       }
       
       const formsAnswers = await getFormAnswerService.execute()
 
-      res.status(200).json(formsAnswers)
+      res.status(200).json({
+        answers: formsAnswers,
+        count: formsAnswers.length
+      })
     } catch (error: any) {
       res.status(400).json(error.errors)
     }
