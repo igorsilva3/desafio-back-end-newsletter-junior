@@ -32,7 +32,6 @@ export class FormAnswerController {
         id: formAnswer.id
       })
     } catch (error: any) {
-      console.log(error);
       if (error.message.includes('Unique constraint failed')) {
         res.status(400).json({
           message: 'Email already exists'
