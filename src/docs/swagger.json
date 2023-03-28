@@ -1,0 +1,170 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Desafio back-end newsletter junior API Docs",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/",
+      "description": "Internal staging server for testing"
+    }
+  ],
+  "paths": {
+    "/answers": {
+      "post": { 
+        "tags": [
+          "Answer"
+        ],
+        "summary": "Create a answer.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 3,
+                    "nullable": false,
+                    "example": "John Deep"
+                  },
+                  "email": {
+                    "type": "string",
+                    "minLength": 1,
+                    "nullable": false,
+                    "example": "john.deep@mail.com"
+                  },
+                  "cpf": {
+                    "type": "string",
+                    "minLength": 11,
+                    "nullable": false,
+                    "example": "12345678911"
+                  },
+                  "phone": {
+                    "type": "string",
+                    "minLength": 10,
+                    "maxLength": 11,
+                    "nullable": false,
+                    "example": "11934567891"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "b42d05e7-dca1-45fb-b5cb-a937fd74764d"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Answer"
+        ],
+        "summary": "Returns all answers",
+        "parameters": [
+          {
+            "name": "startDate",
+            "description": "Filters answers created at in this start date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "description": "Filters answers created at in this end date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "description": "Filter answers amount",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Answer"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Answer": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "b42d05e7-dca1-45fb-b5cb-a937fd74764d"
+          },
+          "name": {
+            "type": "string",
+            "example": "John Deep"
+          },
+          "email": {
+            "type": "string",
+            "example": "john.deep@mail.com"
+          },
+          "cpf": {
+            "type": "string",
+            "example": "12345678911"
+          },
+          "phone": {
+            "type": "string",
+            "example": "11900000000"
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2023-03-27"
+          }
+        }
+      }
+    }
+  }
+}
