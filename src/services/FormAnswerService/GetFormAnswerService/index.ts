@@ -31,7 +31,7 @@ export class GetFormAnswerService implements  IGetFormAnswerService{
       }
 
       const formsAnswers = await prisma.formAnswer.findMany({
-        take: select?.count || 10
+        take: select?.count
       })
 
       return formsAnswers
